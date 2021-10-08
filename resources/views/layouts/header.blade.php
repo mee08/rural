@@ -77,4 +77,3 @@
         @yield('content')
     </main>
 </div>
-
