@@ -30,6 +30,26 @@
                             </li>
                         @endif
                     @else
+
+                    {{-- マイページボタン --}}
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a class="dropdown-item" href="{{ route('management') }}">
+                                    {{ __('マイページ') }}
+                                </a>
+                            </div>
+                        </li>
+
+                        {{-- 投稿ボタン --}}
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a class="dropdown-item" href="{{ route('post') }}">
+                                    {{ __('投稿') }}
+                                </a>
+                            </div>
+                        </li>
+
+                        {{-- ログアウト --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}

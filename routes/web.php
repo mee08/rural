@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('top');
-})->name("top");
+Route::get('/', [App\Http\Controllers\TopController::class, 'top'])->name('top');
+
+Route::get('/management', [App\Http\Controllers\ManagementController::class, 'management'])->name('management');
+
+Route::get('/post', [App\Http\Controllers\PostController::class, 'post'])->name('post');
 
 //リダイレクト系ルート
 Route::get("/thankyou", [App\Http\Controllers\RedirectController::class, 'thankyou'])->name('thankyou');
