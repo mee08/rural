@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('top');
+})->name("top");
+
+//リダイレクト系ルート
+Route::get("/thankyou", [App\Http\Controllers\RedirectController::class, 'thankyou'])->name('thankyou');
