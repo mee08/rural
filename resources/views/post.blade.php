@@ -1,1 +1,5 @@
-<textarea name="" id="" cols="30" rows="10"></textarea>
+@extends('layouts.app')
+
+@section('content')
+
+@endsection
