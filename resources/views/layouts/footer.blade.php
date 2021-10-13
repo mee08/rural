@@ -14,35 +14,31 @@
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h4 class="title">My Account</h4>
-                <a href="#">Wish List</a>
-                <a href="#">Cart</a>
-                <a href="#">Profile</a>
-                <a href="#">Language</a>
+                <h4 class="title">News</h4>
+                <a href="#">10/13 aaaaaaaaaaaa</a>
+                <a href="#">10/13 aaaaaaaaaaaa</a>
+                <a href="#">10/13 aaaaaaaaaaaa</a>
+                <a href="#">10/13 aaaaaaaaaaaa</a>
             </div>
             <div class="col-sm-3">
-                <h4 class="title">Category</h4>
+                <h4 class="title">Tag</h4>
                 <div class="category">
-                <a href="#">men</a>
-                <a href="#">women</a>
-                <a href="#">boy</a>
-                <a href="#">girl</a>
-                <a href="#">bag</a>
-                <a href="#">teshart</a>
-                <a href="#">top</a>
-                <a href="#">shos</a>
-                <a href="#">glass</a>
-                <a href="#">kit</a>
-                <a href="#">baby dress</a>
-                <a href="#">kurti</a>
+                <a href="#">地方創生</a>
+                <a href="#">道の駅</a>
+                <a href="#">地方自治体</a>
+                <a href="#">移住</a>
+                <a href="#">観光</a>
+                <a href="#">北海道</a>
+                <a href="#">インバウンド</a>
+                <a href="#">日本酒</a>
             </div>
             </div>
             <div class="col-sm-3">
-                <h4 class="title">My Account</h4>
-                <a href="#">Wish List</a>
-                <a href="#">Cart</a>
-                <a href="#">Profile</a>
-                <a href="#">Language</a>
+                <h4 class="title">Menu</h4>
+                <a href="#">地方移住</a>
+                <a href="#">地域おこし協力隊</a>
+                <a href="#">働きかた</a>
+                <a href="#">イベント/セミナー</a>
             </div>
         </div>
         <hr>

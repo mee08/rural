@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\TopController::class, 'top'])->name('top');
 
+Route::get('/detail', [App\Http\Controllers\DetailController::class, 'detail'])->name('detail');
+
 Route::get('/management', [App\Http\Controllers\ManagementController::class, 'management'])->name('management');
 
 Route::get('/post', [App\Http\Controllers\PostController::class, 'post'])->name('post');

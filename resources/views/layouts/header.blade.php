@@ -9,12 +9,6 @@
 
         <!-- この下の行に mr-auto クラスを付与するだけ -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
         </ul>
 
         <ul class="navbar-nav">
@@ -65,48 +59,25 @@
 
   {{-- Image --}}
   <div class="logo">
-    <a href="{{ route('top') }}">
-     <img src="{{ asset('img/logo.png') }}" class="d-block mx-auto">
-    </a>
+     <img onclick="location.href='{{ route('top') }}'" src="{{ asset('img/logo.png') }}" class="d-block mx-auto" style="cursor:pointer">
   </div>
 
-  {{-- Menu Bar --}}
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-around" id="navbarNav4">
-
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">リンク1</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">リンク2</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">リンク3</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">リンク4</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">リンク5</a>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-auto mx-auto">
+        <a class="text-dark" href="#">地方移住</a>
+      </div>
+      <div class="col-auto mx-auto">
+        <a class="text-dark" href="#">地域おこし協力隊</a>
+      </div>
+      <div class="col-auto mx-auto">
+        <a class="text-dark" href="#">働きかた</a>
+      </div>
+      <div class="col-auto mx-auto">
+        <a class="text-dark" href="#">イベント/セミナー</a>
+      </div>
     </div>
-  </nav>
-
-
-
+  </div>
 {{-- <main class="py-4">
 @yield('content')
 </main> --}}
