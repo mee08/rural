@@ -3,6 +3,10 @@
 @section('content')
 
 
+{{-- @foreach($posts as $post)
+<img src="{{ Storage::url($post->image)}}" width="100px">
+@endforeach --}}
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -24,7 +28,7 @@
                                 <input type="text" class="form-control" readonly="">
                                 <label class="input-group-btn">
                                 <span class="btn btn-primary">
-                                    Choose File<input type="file" style="display:none">
+                                    Choose File<input id="image" type="file" name="image" style="display:none">
                                 </span>
                                 </label>
                                 </div>

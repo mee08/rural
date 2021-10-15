@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/detail', [App\Http\Controllers\DetailController::class, 'detail'])-
 Route::get('/management', [App\Http\Controllers\ManagementController::class, 'management'])->name('management');
 
 Route::get('/post', [App\Http\Controllers\PostController::class, 'post'])->name('post');
+
+// Route::get('/post', [App\Http\Controllers\PostController::class, 'store'])->name('store');
 
 //リダイレクト系ルート
 Route::get("/thankyou", [App\Http\Controllers\RedirectController::class, 'thankyou'])->name('thankyou');
