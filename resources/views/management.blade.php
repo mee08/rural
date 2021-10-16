@@ -23,45 +23,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>こんにちは</td>
-                <td>2020/8/28 10:15:20</td>
-                <td>地域活性化</td>
-                <td>
-                    <form>
-                        <span>
-                        <button class="btn btn-outline-primary" type="button">編集</button>
-                        <button class="delete-action btn btn-outline-danger" type="button" data-toggle="modal" data-target="#testModal">削除</button>
-                        </span>
-                    </form>
-                </td>
-              </tr>
+                @foreach ($posts as $post)
                 <tr>
-                  <td>こんばんは</td>
-                  <td>2020/8/28 10:15:20</td>
-                  <td>地域活性化</td>
-                  <td>
-                      <form>
-                          <span>
-                          <button class="btn btn-outline-primary" type="button">編集</button>
-                          <button class="delete-action btn btn-outline-danger" type="button" data-toggle="modal" data-target="#testModal">削除</button>
-                          </span>
-                      </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>こんにちは</td>
-                  <td>2020/8/28 10:15:20</td>
-                  <td>地域活性化</td>
-                  <td>
-                      <form>
-                          <span>
-                          <button class="btn btn-outline-primary" type="button">編集</button>
-                          <button class="delete-action btn btn-outline-danger" type="button" data-toggle="modal" data-target="#testModal">削除</button>
-                          </span>
-                      </form>
-                  </td>
-                </tr>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->created_at}}</td>
+                    <td>
+                        {{config("post.category")[$post->category]}}
+                    </td>
+                    <td>
+                        <form>
+                            <span>
+                            <button class="btn btn-outline-primary" onclick="location.href='{{ route('management.edit' , $post->id) }}'" type="button">編集</button>
+                            <button class="delete-action btn btn-outline-danger" type="button" data-toggle="modal" data-target="#testModal">削除</button>
+                            </span>
+                        </form>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
           </table>
      </div>
@@ -98,7 +76,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                <button onclick="location.href='{{ route('thankyou') }}'" type="button" class="btn btn-danger">削除</button>
+                <button onclick="location.href='{{ route('management.delete', $post->id) }}'" type="button" class="btn btn-danger">削除</button>
             </div>
         </div>
     </div>

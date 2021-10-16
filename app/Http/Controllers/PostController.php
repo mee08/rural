@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,23 +14,19 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        // 新規postを作成
-        $post=new Post();
+        $title = $request->title;
+        $body = $request->body;
+        $category = $request->category;
+        $user_id = Auth::id();
 
-        // バリデーションルール
-        $inputs=request()->validate([
-            'title'=>'required|max:255',
-            'body'=>'required|max:255',
-            'image'=>'image'
+        Post::create([
+            "title" => $title,
+            "body" => $body,
+            "user_id" => $user_id,
+            "img" => null,
+            "category" => $category
         ]);
 
-        // 画像ファイルの保存場所指定
-        if(request('image')){
-            $filename=request()->file('image')->getClientOriginalName();
-            $inputs['image']=request('image')->storeAs('public/img', $filename);
-        }
-
-        // postを保存
-        $post->create($inputs);
+        return view("redirect.thankyou");
     }
 }

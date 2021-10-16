@@ -11,14 +11,15 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">投稿画面</div>
+                <div class="card-header">編集画面</div>
                 <div class="card-body">
-                    <form action="{{route("post.store")}}" method="post">
+                    <form action="{{route("management.update")}}" method="post">
                         @csrf
+                        <input type="hidden" name="post_id" value="{{$post->id}}">
                         <div class="col-md-4">
                           <div class="form-group row">
                             <label for="exampleFormControlInput1">タイトル</label>
-                            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="○○文字以内">
+                            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="○○文字以内" value="{{$post->title}}">
                           </div>
                         </div>
 
@@ -39,18 +40,18 @@
                         <div class="col-12">
                             <div class="form-group row">
                                 <label for="exampleFormControlTextarea1">本文</label>
-                                <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="5">{{$post->body}}</textarea>
                             </div>
                         </div>
 
                         <div>
                             <select name="category" id="">
                                 @foreach (config('post.category') as $key => $val)
-                                <option value="{{$key}}">{{$val}}</option>
+                                <option value="{{$key}}" @if($key == $post->category) selected @endif>{{$val}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary float-right" id="modal_btn" >送信</button>
+                        <button type="submit" class="btn btn-lg btn-primary float-right" id="edit_btn" >送信</button>
                     </form>
 
                 </div>

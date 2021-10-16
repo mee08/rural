@@ -19,11 +19,19 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\TopController::class, 'top'])->name('top');
 
-Route::get('/detail', [App\Http\Controllers\DetailController::class, 'detail'])->name('detail');
+Route::get('/detail/{id}', [App\Http\Controllers\DetailController::class, 'detail'])->name('detail');
 
 Route::get('/management', [App\Http\Controllers\ManagementController::class, 'management'])->name('management');
 
+Route::get('/management/edit/{id}', [App\Http\Controllers\ManagementController::class, 'edit'])->name('management.edit');
+
+Route::post('/management/update', [App\Http\Controllers\ManagementController::class, 'update'])->name('management.update');
+
+Route::get('/management/delete/{id}', [App\Http\Controllers\ManagementController::class, 'delete'])->name('management.delete');
+
 Route::get('/post', [App\Http\Controllers\PostController::class, 'post'])->name('post');
+
+Route::post('/post/store', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 
 // Route::get('/post', [App\Http\Controllers\PostController::class, 'store'])->name('store');
 
