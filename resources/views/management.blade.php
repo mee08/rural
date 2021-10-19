@@ -5,7 +5,7 @@
   <div class="container">
 
     <div class="d-flex justify-content-between">
-        <h1>ユーザー名</h1>
+        <h1>{{ Auth::user()->name }}</h1>
         <div>
         <button onclick="location.href='{{ route('top') }}'"
          type="button" class="btn btn-outline-primary text-right">トップ</button>
@@ -17,7 +17,7 @@
             <thead class="thead-dark">
               <tr>
                 <th style="width: 40%">タイトル</th>
-                <th style="width: 25%">日付</th>
+                <th style="width: 25%">最終更新日時</th>
                 <th style="width: 20%">カテゴリー</th>
                 <th style="width: 15%">編集/削除</th>
               </tr>
@@ -26,7 +26,7 @@
                 @foreach ($posts as $post)
                 <tr>
                     <td>{{$post->title}}</td>
-                    <td>{{$post->created_at}}</td>
+                    <td>{{$post->updated_at}}</td>
                     <td>
                         {{config("post.category")[$post->category]}}
                     </td>
@@ -43,25 +43,9 @@
               </tbody>
           </table>
      </div>
-     <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+     <div class="d-flex justify-content-end">
+     {{ $posts->links('pagination::bootstrap-4') }}
+    </div>
   </div>
 
   <!-- ボタン・リンククリック後に表示される画面の内容 -->

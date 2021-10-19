@@ -4,12 +4,12 @@
 
 <div class="container mt-4 mb-4">
   <div class="card mb-4">
-    <img src="{{ asset('img/rural1.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="auto">
+    <img src="{{ asset('storage/' . $post->img) }}" class="bd-placeholder-img card-img-top" width="100%" height="auto">
   </div>
   <div class="card mb-4">
     <div class="card-body">
         <h3 class="card-title">{{$post->title}}</h3>
-        <p class="card-text"><small class="text-muted">{{$post->user->name}} | {{date("Y/m/d/",strtotime($post->created_at))}}</small></p>
+        <p class="card-text"><small class="text-muted">{{$post->user->name}} | {{date("Y/m/d",strtotime($post->updated_at))}}</small></p>
     </div>
     {{-- <div class="card-body">
         <h5 class="card-title">Card title</h5>

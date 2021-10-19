@@ -14,11 +14,11 @@ class AddUserColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('birthplace')->nullable();
-            $table->integer('frequency')->nullable();
-            $table->integer('infomation')->nullable();
-            $table->string('activities')->nullable();
-        });
+            $table->string('birthplace');
+            $table->string('frequency');
+            $table->string('information');
+            $table->text('activities');
+       });
     }
 
     /**
@@ -31,7 +31,7 @@ class AddUserColumnToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('birthplace');
             $table->dropColumn('frequency');
-            $table->dropColumn('infomation');
+            $table->dropColumn('information');
             $table->dropColumn('activities');
         });
     }

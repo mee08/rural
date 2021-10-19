@@ -17,13 +17,17 @@ class PostController extends Controller
         $title = $request->title;
         $body = $request->body;
         $category = $request->category;
+
+        $filename=$request->imgpath->getClientOriginalName();
+        $img=$request->imgpath->storeAs('',$filename,'public');  //storeメソッドを追加
+
         $user_id = Auth::id();
 
         Post::create([
             "title" => $title,
             "body" => $body,
             "user_id" => $user_id,
-            "img" => null,
+            "img" => $img,
             "category" => $category
         ]);
 

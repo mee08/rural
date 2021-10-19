@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">投稿画面</div>
                 <div class="card-body">
-                    <form action="{{route("post.store")}}" method="post">
+                    <form action="{{route("post.store")}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-4">
                           <div class="form-group row">
@@ -24,15 +24,16 @@
 
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="exampleFormControlInput1">画像アップロード</label>
+                                {{-- <label for="exampleFormControlInput1">画像アップロード</label>
                                 <div class="input-group">
-                                <input type="text" class="form-control" readonly="">
+                                <input type="text" class="form-control" readonly="" name="imgpath">
                                 <label class="input-group-btn">
                                 <span class="btn btn-primary">
                                     Choose File<input id="image" type="file" name="image" style="display:none">
                                 </span>
                                 </label>
-                                </div>
+                                </div> --}}
+                                <input type="file" name="imgpath">
                             </div>
                         </div>
 
@@ -58,6 +59,9 @@
         </div>
     </div>
 </div>
+
+
+</form>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">

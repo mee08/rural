@@ -10,7 +10,7 @@ class ManagementController extends Controller
 {
     public function management(){
         $user_id = Auth::id();
-        $posts = Post::where("user_id", $user_id)->get();
+        $posts = Post::where("user_id", $user_id)->orderBy('updated_at', 'desc')->paginate(3);
         return view("management", ["posts" => $posts]);
     }
 

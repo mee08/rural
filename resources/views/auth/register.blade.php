@@ -47,75 +47,71 @@
                         </div>
 
                         {{-- 出身地 --}}
-                        {{-- <div class="form-group row"> --}}
-                        {{-- <div class="form-group"> --}}
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('出身地(都道府県)') }}</label> --}}
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label">{{ __('出身地(都道府県)') }}</label>
+                        <div class="form-group">
+                            <label for="birthplace" class="col-md-4 col-form-label">{{ __('出身地(都道府県)') }}</label>
 
                             <div class="col-md-12">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="birthplace" type="text" class="form-control" name="birthplace" required autocomplete="street-address">
                             </div>
-                        </div> --}}
+                        </div>
 
                         {{-- 投稿頻度 --}}
-                        {{-- <div class="form-group row"> --}}
-                        {{-- <div class="form-group"> --}}
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('投稿頻度') }}</label> --}}
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label">{{ __('投稿頻度') }}</label>
+                        <div class="form-group">
+                            <label for="frequency" class="col-md-4 col-form-label">{{ __('投稿頻度') }}</label>
 
                             <div class="ml-3">
                             <div class="form-check">
-                                <input type="radio" class="form-check-input" name="optradio1" id="" value="" checked>
-                                <label for="" class="form-check-label">週に2記事以上</label>
+                                <input type="radio" class="form-check-input" name="frequency" id="twice-a-week" value="週に2記事以上" checked>
+                                <label for="twice-a-week" class="form-check-label">週に2記事以上</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input" name="optradio1" id="" value="">
-                                <label for="" class="form-check-label">週に1記事</label>
+                                <input type="radio" class="form-check-input" name="frequency" id="once-a-week" value="週に1記事">
+                                <label for="once-a-week" class="form-check-label">週に1記事</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input" name="optradio1" id="" value="">
-                                <label for="" class="form-check-label">月に2記事</label>
+                                <input type="radio" class="form-check-input" name="frequency" id="twice-a-month" value="月に2記事">
+                                <label for="twice-a-month" class="form-check-label">月に2記事</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input" name="optradio1" id="" value="">
-                                <label for="" class="form-check-label">その他</label>
+                                <input type="radio" class="form-check-input" name="frequency" id="other" value="その他">
+                                <label for="other" class="form-check-label">その他</label>
                             </div>
-                          </div>
-                        </div> --}}
+                            </div>
+                        </div>
 
                         {{-- 発信したい情報 --}}
                         {{-- <div class="form-group row"> --}}
-                        {{-- <div class="form-group"> --}}
+                        <div class="form-group">
                             {{-- <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('発信したい情報') }}</label> --}}
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label">{{ __('発信したい情報') }}</label>
+                            {{-- {{-- <label for="information" class="col-md-4 col-form-label">{{ __('発信したい情報') }}</label> --}}
 
                             <div class="ml-3">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="" value="" checked>
+                                <input type="radio" name="information" class="form-check-input" id="" value="移住体験" checked>
                                 <label for="" class="form-check-label">移住体験</label>
                               </div>
                               <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="" value="">
+                                <input type="radio" name="information" class="form-check-input" id="" value="地域の産品情報">
                                 <label for="" class="form-check-label">地域の産品情報</label>
                               </div>
                               <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="" value="">
+                                <input type="radio" name="information" class="form-check-input" id="" value="観光情報">
                                 <label for="" class="form-check-label">観光情報</label>
                               </div>
                               <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="" value="">
+                                <input type="radio" name="information" class="form-check-input" id="" value="その他">
                                 <label for="" class="form-check-label">その他</label>
                               </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                         {{-- 現在の活動内容 --}}
-                        {{-- <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 col-form-label">{{ __('現在の活動内容') }}</label>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="col-md-4 col-form-label">{{ __('現在の活動内容') }}</label>
                             <div class="col-md-12">
-                            <textarea id="inputText" class="form-control" placeholder="テキスト入力" rows="5"></textarea>
+                            <textarea name="activities" id="exampleFormControlTextarea1" class="form-control" placeholder="テキスト入力" rows="5"></textarea>
                             </div>
-                        </div> --}}
+                        </div>
 
                         {{-- <div class="form-group row mb-0">
                             <div class="col-md-12 offset-md-4">

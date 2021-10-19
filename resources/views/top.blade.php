@@ -12,7 +12,7 @@
 
         <div class="col-lg-4">
             <div class="card mb-4 shadow-sm">
-              <img src="{{ asset('img/rural1.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="180">
+              <img src="{{ asset('storage/' . $post->img) }}" class="bd-placeholder-img card-img-top" width="100%" height="180">
               <div class="card-body">
                 <p class="card-text">{{$post->title}}</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -27,9 +27,10 @@
 
         @endforeach
 
-
       </div>
+      <div class="d-flex justify-content-end">
+        {{ $posts->links('pagination::bootstrap-4') }}
+        </div>
     </div>
-
 
 @endsection
