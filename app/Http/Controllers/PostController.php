@@ -31,6 +31,6 @@ class PostController extends Controller
             "category" => $category
         ]);
 
-        return view("redirect.thankyou");
+        return view("redirect.posted");
     }
 }

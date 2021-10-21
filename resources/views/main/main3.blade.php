@@ -2,11 +2,15 @@
 @section('title','トップページ')
 @section('contents')
 
-
-<div class="album py-5 bg-light">
     <div class="container">
-
-      <div class="row">
+        <div class="text-center m-3">
+            <h3>Work style</h3>
+            <div class="text-muted">地方での新しい働き方のヒント</div>
+         </div>
+            <h5 class="border-top text-muted" style="padding-top:30px">
+                テクノロジーの進歩によるテレワークの普及や、働き方改革により都心部・地方関係なく働き方が変化しています。人や仕事の繋がり方が変化しつつあるからこそ、私たちに多くの選択肢を与えています。
+            </h5>
+      <div class="row mt-4">
         @foreach ($posts as $post)
 
 

@@ -35,10 +35,10 @@
             </div>
             <div class="col-sm-3">
                 <h4 class="title">Menu</h4>
-                <a href="#">地方移住</a>
-                <a href="#">地域おこし協力隊</a>
-                <a href="#">働きかた</a>
-                <a href="#">イベント/セミナー</a>
+                <a href="{{ route('main.main1') }}">地方移住</a>
+                <a href="{{ route('main.main2') }}">地域おこし協力隊</a>
+                <a href="{{ route('main.main3') }}">働きかた</a>
+                <a href="{{ route('main.main4') }}">イベント/セミナー</a>
             </div>
         </div>
         <hr>

@@ -23,12 +23,16 @@ class ManagementController extends Controller
         $id = $request->post_id;
         $title = $request->title;
         $body = $request->body;
+
+        $filename=$request->imgpath->getClientOriginalName();
+        $img=$request->imgpath->storeAs('',$filename,'public');
+
         $category = $request->category;
 
         Post::where("id",$id)->update([
             "title" => $title,
             "body" => $body,
-            "img" => null,
+            "img" => $img,
             "category" => $category
         ]);
 
@@ -37,6 +41,6 @@ class ManagementController extends Controller
 
     public function delete($id){
         Post::where("id", $id)->delete();
-        return view("redirect.thankyou");
+        return view("redirect.deleted");
     }
 }

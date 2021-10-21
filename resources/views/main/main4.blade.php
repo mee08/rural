@@ -2,11 +2,15 @@
 @section('title','トップページ')
 @section('contents')
 
-
-<div class="album py-5 bg-light">
     <div class="container">
-
-      <div class="row">
+        <div class="text-center m-3">
+            <h3>Events/Seminars</h3>
+            <div class="text-muted">地方イベント、専門家の講演会</div>
+         </div>
+            <h5 class="border-top text-muted" style="padding-top:30px">
+                まずは行動!お手軽に参加できるイベントでまずは「地域に触れること」から始めてみませんか？または専門家の意見を聞いて地域の未来について考えてみませんか？
+            </h5>
+      <div class="row mt-4">
         @foreach ($posts as $post)
 
 

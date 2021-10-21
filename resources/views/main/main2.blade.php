@@ -2,11 +2,15 @@
 @section('title','トップページ')
 @section('contents')
 
-
-<div class="album py-5 bg-light">
     <div class="container">
-
-      <div class="row">
+        <div class="text-center m-3">
+            <h3>Regional revitalization cooperation corps</h3>
+            <div class="text-muted">地域おこし協力隊の体験談</div>
+         </div>
+            <h5 class="border-top text-muted" style="padding-top:30px">
+                地域の課題解決や新規事業に貢献すべく、期間限定で地域移住する「地域おこし協力隊」。地域の活性化に向けて若い力が地域にエネルギーを与えています。
+            </h5>
+      <div class="row mt-4">
         @foreach ($posts as $post)
 
 

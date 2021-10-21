@@ -18,7 +18,7 @@
     </div> --}}
   </div>
   <p class="h5">
-      {{$post->body}}
+      {!!nl2br($post->body)!!}
     </p>
 </div>
 

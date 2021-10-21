@@ -65,16 +65,16 @@
   <div class="container">
     <div class="row">
       <div class="col-auto mx-auto">
-        <a class="text-dark" href="#">地方移住</a>
+        <a class="text-dark" href="{{ route('main.main1') }}">地方移住</a>
       </div>
       <div class="col-auto mx-auto">
-        <a class="text-dark" href="#">地域おこし協力隊</a>
+        <a class="text-dark" href="{{ route('main.main2') }}">地域おこし協力隊</a>
       </div>
       <div class="col-auto mx-auto">
-        <a class="text-dark" href="#">働きかた</a>
+        <a class="text-dark" href="{{ route('main.main3') }}">働きかた</a>
       </div>
       <div class="col-auto mx-auto">
-        <a class="text-dark" href="#">イベント/セミナー</a>
+        <a class="text-dark" href="{{ route('main.main4') }}">イベント/セミナー</a>
       </div>
     </div>
   </div>
