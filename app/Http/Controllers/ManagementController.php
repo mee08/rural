@@ -20,21 +20,23 @@ class ManagementController extends Controller
     }
 
     public function update(Request $request){
+        // dd($request);
         $id = $request->post_id;
         $title = $request->title;
         $body = $request->body;
 
-        $filename=$request->imgpath->getClientOriginalName();
-        $img=$request->imgpath->storeAs('',$filename,'public');
-
         $category = $request->category;
 
-        Post::where("id",$id)->update([
-            "title" => $title,
-            "body" => $body,
-            "img" => $img,
-            "category" => $category
-        ]);
+        $post = Post::find($id);
+        $post->title = $title;
+        $post->body = $body;
+        if($request->has("imgpath")){
+            $filename=$request->imgpath->getClientOriginalName();
+            $img=$request->imgpath->storeAs('',$filename,'public');
+            $post->img = $img;
+        }
+        $post->category = $category;
+        $post->save;
 
         return view("redirect.thankyou");
     }
@@ -42,5 +44,9 @@ class ManagementController extends Controller
     public function delete($id){
         Post::where("id", $id)->delete();
         return view("redirect.deleted");
+    }
+
+    public function news(){
+        return view("news");
     }
 }

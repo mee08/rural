@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\TopController::class, 'top'])->name('top');
 
+Route::post('/', [App\Http\Controllers\TopController::class, 'top'])->name('search');
+
 //mainページ切り替え
 Route::get('/main/main1', [App\Http\Controllers\MainController::class, 'main1'])->name('main.main1');
 
@@ -31,6 +33,8 @@ Route::get('/main/main4', [App\Http\Controllers\MainController::class, 'main4'])
 Route::get('/detail/{id}', [App\Http\Controllers\DetailController::class, 'detail'])->name('detail');
 
 Route::get('/management', [App\Http\Controllers\ManagementController::class, 'management'])->name('management');
+
+Route::get('/management/news', [App\Http\Controllers\ManagementController::class, 'news'])->name('management.news');
 
 Route::get('/management/edit/{id}', [App\Http\Controllers\ManagementController::class, 'edit'])->name('management.edit');
 

@@ -87,19 +87,19 @@
 
                             <div class="ml-3">
                             <div class="form-check">
-                                <input type="radio" name="information" class="form-check-input" id="" value="移住体験" checked>
+                                <input type="checkbox" name="information[]" class="form-check-input" id="" value="移住体験" checked>
                                 <label for="" class="form-check-label">移住体験</label>
                               </div>
                               <div class="form-check">
-                                <input type="radio" name="information" class="form-check-input" id="" value="地域の産品情報">
+                                <input type="checkbox" name="information[]" class="form-check-input" id="" value="地域の産品情報">
                                 <label for="" class="form-check-label">地域の産品情報</label>
                               </div>
                               <div class="form-check">
-                                <input type="radio" name="information" class="form-check-input" id="" value="観光情報">
+                                <input type="checkbox" name="information[]" class="form-check-input" id="" value="観光情報">
                                 <label for="" class="form-check-label">観光情報</label>
                               </div>
                               <div class="form-check">
-                                <input type="radio" name="information" class="form-check-input" id="" value="その他">
+                                <input type="checkbox" name="information[]" class="form-check-input" id="" value="その他">
                                 <label for="" class="form-check-label">その他</label>
                               </div>
                             </div>

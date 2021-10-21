@@ -37,6 +37,14 @@
                 </a>
             </li>
 
+            @if(Auth::id() == 1)
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('management.news') }}">
+                        {{ __('news') }}
+                </a>
+            </li>
+            @endif
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }}
@@ -57,27 +65,7 @@
     </div>
   </nav>
 
-  {{-- Image --}}
-  <div class="logo">
-     <img onclick="location.href='{{ route('top') }}'" src="{{ asset('img/logo.png') }}" class="d-block mx-auto" style="cursor:pointer">
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-auto mx-auto">
-        <a class="text-dark" href="{{ route('main.main1') }}">地方移住</a>
-      </div>
-      <div class="col-auto mx-auto">
-        <a class="text-dark" href="{{ route('main.main2') }}">地域おこし協力隊</a>
-      </div>
-      <div class="col-auto mx-auto">
-        <a class="text-dark" href="{{ route('main.main3') }}">働きかた</a>
-      </div>
-      <div class="col-auto mx-auto">
-        <a class="text-dark" href="{{ route('main.main4') }}">イベント/セミナー</a>
-      </div>
-    </div>
-  </div>
 {{-- <main class="py-4">
 @yield('content')
 </main> --}}

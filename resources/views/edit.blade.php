@@ -26,7 +26,8 @@
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <label for="">画像アップロード</label>
-                                <input type="file" class="form-control-file" id="" name="imgpath">
+                                <input type="file" class="form-control-file" id="img" name="imgpath">
+                                <span id="old_img">{{$post->img}}</span>
                             </div>
                         </div>
 
@@ -88,7 +89,11 @@ $('#exampleModal').on('show.bs.modal', function () {
     var modal = $(this)
     modal.find('#modalTitle').text(title)
     modal.find('#modalBody').text(body)
-  })
+  });
+
+  $("#img").on("change", function(){
+      $("#old_img").remove();
+  });
 });
 </script>
 @endsection
