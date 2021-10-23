@@ -1,12 +1,23 @@
+{{-- <form action="{{route("news.store")}}" method="post"> --}}
+    {{-- @csrf
+    <input type="text" name="title">
+    <select name="" id="">
+
+    </select>
+    <textarea name="body" id="" cols="30" rows="10"></textarea>
+
+    <button type="submit">投稿</button>
+</form> --}}
+
 @extends('layouts.app')
 
 @section('content')
-
+{{--
 <style>
 input[type="file"] {
     display: none;
 }
-</style>
+</style> --}}
 
 
 {{-- @foreach($posts as $post)
@@ -19,25 +30,13 @@ input[type="file"] {
             <div class="card">
                 <div class="card-header">投稿画面</div>
                 <div class="card-body">
-                    <form action="{{route("post.store")}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route("news.store")}}" method="post">
                         @csrf
                         <div class="col-md-4">
                           <div class="form-group">
                             <div class="h5">タイトル</div>
                             <input name="title" type="text" class="form-control" id="formTitle" placeholder="○○文字以内">
                           </div>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <div class="form-group">
-                                <div class="h5">画像アップロード
-                                <input type="file" class="form-control-file" id="img" name="imgpath">
-                                <label for="img" class="btn btn-secondary btn-sm">
-                                ファイルを選択
-                                </label>
-                                </div>
-                                <div id="old_img">選択されていません</div>
-                            </div>
                         </div>
 
                         <div class="col-12 mt-4">
@@ -95,7 +94,7 @@ input[type="file"] {
   </div>
 </div>
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 window.addEventListener('DOMContentLoaded', function(){
 $('#exampleModal').on('show.bs.modal', function () {
     var title = $('#formTitle').val()
@@ -110,5 +109,6 @@ $("#img").on("change", function(){
     $('#old_img').text(file.name);
   });
 });
-</script>
+</script> --}}
 @endsection
+

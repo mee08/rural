@@ -7,6 +7,12 @@
 <img src="{{ Storage::url($post->image)}}" width="100px">
 @endforeach --}}
 
+<style>
+input[type="file"] {
+    display: none;
+}
+</style>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -17,33 +23,41 @@
                         @csrf
                         <input type="hidden" name="post_id" value="{{$post->id}}">
                         <div class="col-md-4">
-                          <div class="form-group row">
-                            <label for="formTitle">タイトル</label>
+                          <div class="form-group">
+                            <div class="h5">タイトル</div>
                             <input name="title" type="text" class="form-control" id="formTitle" placeholder="○○文字以内" value="{{$post->title}}">
                           </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label for="">画像アップロード</label>
+                        <div class="col-md-12 mt-4">
+                            <div class="form-group">
+                                <div class="h5">画像アップロード
                                 <input type="file" class="form-control-file" id="img" name="imgpath">
-                                <span id="old_img">{{$post->img}}</span>
+                                <label for="img" class="btn btn-secondary btn-sm">
+                                ファイルを選択
+                                </label>
+                                </div>
+                                <div id="old_img">{{$post->img}}</div>
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <div class="form-group row">
-                                <label for="formBody">本文</label>
+                        <div class="col-12 mt-4">
+                            <div class="form-group">
+                                <div class="h5">本文</div>
                                 <textarea name="body" class="form-control" id="formBody" rows="5">{{$post->body}}</textarea>
                             </div>
                         </div>
 
-                        <div>
+                        <div class="col-md-4 mt-4">
+                            <div class="form-group">
+                            <div class="h5">タグ</div>
                             <select name="category" id="">
                                 @foreach (config('post.category') as $key => $val)
                                 <option value="{{$key}}" @if($key == $post->category) selected @endif>{{$val}}</option>
                                 @endforeach
                             </select>
+                            </div>
+                            </div>
                         </div>
                         <div class="text-right">
                         <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal">プレビュー</button>
@@ -72,7 +86,7 @@
         <p class="h5" id="modalBody"></p>
           <div class="text-right mr-2 mb-2">
             <button type="button" class="btn btn-outline-primary" data-dismiss="modal">戻る</button>
-            <button type="button" class="btn btn-outline-success" onclick="location.href='{{ route('post.store') }}'">送信</button>
+            <button type="button" class="btn btn-outline-success" onclick="location.href='{{ route('post.store') }}'">更新</button>
             </div>
          </div>
        </div>
@@ -91,9 +105,12 @@ $('#exampleModal').on('show.bs.modal', function () {
     modal.find('#modalBody').text(body)
   });
 
+
   $("#img").on("change", function(){
-      $("#old_img").remove();
+      var file = $(this).prop('files')[0];
+      $('#old_img').text(file.name);
   });
 });
+
 </script>
 @endsection

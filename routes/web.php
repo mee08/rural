@@ -36,6 +36,10 @@ Route::get('/management', [App\Http\Controllers\ManagementController::class, 'ma
 
 Route::get('/management/news', [App\Http\Controllers\ManagementController::class, 'news'])->name('management.news');
 
+Route::post('/management/news/store', [App\Http\Controllers\ManagementController::class, 'store'])->name('news.store');
+
+Route::get('/management/news/article/{id}', [App\Http\Controllers\ManagementController::class, 'article'])->name('news.article');
+
 Route::get('/management/edit/{id}', [App\Http\Controllers\ManagementController::class, 'edit'])->name('management.edit');
 
 Route::post('/management/update', [App\Http\Controllers\ManagementController::class, 'update'])->name('management.update');

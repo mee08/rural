@@ -40,7 +40,7 @@
             @if(Auth::id() == 1)
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('management.news') }}">
-                        {{ __('news') }}
+                        {{ __('ニュース') }}
                 </a>
             </li>
             @endif

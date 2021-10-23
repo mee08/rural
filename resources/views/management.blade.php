@@ -17,7 +17,7 @@
             <thead class="thead-dark">
               <tr>
                 <th style="width: 40%">タイトル</th>
-                <th style="width: 25%">最終更新日時</th>
+                <th style="width: 25%">投稿日時</th>
                 <th style="width: 20%">カテゴリー</th>
                 <th style="width: 15%">編集/削除</th>
               </tr>
@@ -26,7 +26,7 @@
                 @foreach ($posts as $post)
                 <tr>
                     <td>{{$post->title}}</td>
-                    <td>{{$post->updated_at}}</td>
+                    <td>{{$post->created_at}}</td>
                     <td>
                         {{config("post.category")[$post->category]}}
                     </td>

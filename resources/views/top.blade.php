@@ -1,21 +1,22 @@
 @extends('layouts.base')
 @section('title','トップページ')
-@section('contents')
+@section('content')
+
+<div class="container">
+<form class="mt-3" action="{{route("search")}}" method="post">
+    @csrf
+    <input type="text" name="keyword" id="keyword">
+    <button type="submit">検索</button>
+    @if($flg)
+    <div>検索結果{{count($posts)}}件</div>
+    @endif
+ </form>
+</div>
 
 {{-- Image --}}
 <div class="logo">
     <img onclick="location.href='{{ route('top') }}'" src="{{ asset('img/logo.png') }}" class="d-block mx-auto" style="cursor:pointer">
- </div>
-
- <form action="{{route("search")}}" method="post">
-   @csrf
-   <input type="text" name="keyword" id="keyword">
-   <button type="submit">検索</button>
-   @if($flg)
-   <div>検索結果{{count($posts)}}件</div>
-   @endif
-
- </form>
+</div>
 
 
  <div class="container">

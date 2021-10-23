@@ -1,13 +1,17 @@
-<div id="solicitation" style="display:none;position:relative;top:50%;left:50%;background-color:green;width:300px;height:300px;">
-    <div>
-        会員の方はログインしてください
-        <a href="#">ログイン</a>
+<div id="solicitation" class="alert alert-success mt-5 container fixed-top shadow-lg rounded border border-success" style="display:none;width:40vw;">
+    <h2 class="alert-heading">ログインされていません</h2>
+    <hr>
+    <p class="h3">ご登録済みの方はログインフォームへ</p>
+    <div class="text-right">
+    <a class="h3 text-success text-decoration-none" href="{{ route('login') }}">→ログインフォーム</a>
     </div>
-    <div>
-        新規の方は新規登録してください
-        <a href="#">新規登録</a>
+    <hr>
+    <p class="h3">新規の方はご登録をよろしくお願いします!!</p>
+    <div class="text-right">
+    <a  class="h3  text-success text-decoration-none" href="{{ route('register') }}">→新規登録</a>
     </div>
-    <div>
-        <button id="back_index">閉じる</button>
+    <div class="h3 text-center">
+    <hr>
+    <button id="back_index" class="btn btn-outline-secondary">閉じる</button>
     </div>
 </div>
