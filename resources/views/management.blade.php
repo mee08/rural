@@ -1,11 +1,11 @@
 @extends('layouts.app')
-
+@section('title','マイページ')
 @section('content')
 
   <div class="container">
 
     <div class="d-flex justify-content-between">
-        <h1>{{ Auth::user()->name }}</h1>
+        <h1>{{ Auth::user()->name }}様</h1>
         <div>
         <button onclick="location.href='{{ route('top') }}'"
          type="button" class="btn btn-outline-primary text-right">トップ</button>

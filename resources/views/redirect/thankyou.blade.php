@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','登録完了画面')
 @section('content')
 
 <div class="jumbotron text-center">

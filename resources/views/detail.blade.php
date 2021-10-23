@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title','トップページ')
+@section('title','ブログ記事画面')
 @section('content')
 
 <div class="container mt-4 mb-4">

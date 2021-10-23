@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title','トップページ')
+@section('title','地方移住')
 @section('content')
 
     {{-- Image --}}

@@ -67,7 +67,8 @@ class ManagementController extends Controller
 
     public function article($id)
     {
+        $news = News::orderBy('updated_at', 'desc')->get();
         $article = News::find($id);
-        return view("article", ["article" => $article]);
+        return view("article", ["article" => $article,"news" => $news]);
     }
 }

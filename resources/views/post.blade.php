@@ -1,17 +1,15 @@
 @extends('layouts.app')
-
+@section('title','投稿画面')
 @section('content')
 
 <style>
 input[type="file"] {
     display: none;
 }
+#modalBody {
+  white-space: pre-wrap;
+}
 </style>
-
-
-{{-- @foreach($posts as $post)
-<img src="{{ Storage::url($post->image)}}" width="100px">
-@endforeach --}}
 
 <div class="container">
     <div class="row justify-content-center">
@@ -62,37 +60,32 @@ input[type="file"] {
                         <button type="submit" class="btn btn-lg btn-primary" id="modal_btn" >送信</button>
                         </div>
                     </form>
-
+                </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-</form>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="card mb-4">
-            <img src="{{ asset('img/rural1.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="auto">
-        </div>
-        <div class="card mb-4">
-          <div class="card-body">
-              <h3 class="card-title" id="modalTitle"></h3>
-              <p class="card-text"><small class="text-muted">ユーザー名 | 投稿日</small></p>
-          </div>
-        </div>
-        <p class="h5" id="modalBody"></p>
-          <div class="text-right mr-2 mb-2">
-            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">戻る</button>
+        <div class="modal-content" style="background-color: #F8FAFC">
+            <div class="card mb-4">
+                <img id="img1" style="width:100%;height:auto;">
             </div>
-         </div>
-       </div>
-      </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title" id="modalTitle"></h3>
+                    <p class="card-text"><small class="text-muted">ユーザー名 | 投稿日</small></p>
+                </div>
+            </div>
+                <p class="h5" id="modalBody"></p>
+            <div class="text-right mr-2 mb-2">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">戻る</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script type="text/javascript">
@@ -103,7 +96,28 @@ $('#exampleModal').on('show.bs.modal', function () {
     var modal = $(this)
     modal.find('#modalTitle').text(title)
     modal.find('#modalBody').text(body)
-  })
+  });
+
+$('#img').change(function(e){
+    //ファイルオブジェクトを取得する
+    var file = e.target.files[0];
+    var reader = new FileReader();
+
+    //画像でない場合は処理終了
+    if(file.type.indexOf("image") < 0){
+      alert("画像ファイルを指定してください。");
+      return false;
+    }
+
+    //アップロードした画像を設定する
+    reader.onload = (function(file){
+      return function(e){
+        $("#img1").attr("src", e.target.result);
+        $("#img1").attr("title", file.name);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+});
 
 $("#img").on("change", function(){
     var file = $(this).prop('files')[0];

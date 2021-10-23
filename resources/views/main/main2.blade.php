@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title','トップページ')
+@section('title','地域おこし協力隊')
 @section('content')
 
     {{-- Image --}}
